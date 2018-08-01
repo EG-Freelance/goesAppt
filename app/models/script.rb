@@ -9,6 +9,8 @@ class Script < ActiveRecord::Base
 			l == 8120 ? reagan = DateTime.parse(JSON.parse(body)[0]["startTimestamp"]) : dulles = DateTime.parse(JSON.parse(body)[0]["startTimestamp"])
 		end
 		
+		puts "Dulles: #{dulles} -- Reagan: #{reagan}"
+		
 		if dulles < DateTime.new(2018,8,14,12) || reagan < DateTime.new(2018,8,14,12)
 			UserMailer.new_entry(dulles, reagan).deliver_now
 		end
