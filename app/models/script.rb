@@ -11,6 +11,7 @@ class Script < ActiveRecord::Base
 		
 		if dulles < DateTime.new(2018,8,14,12) || reagan < DateTime.new(2018,8,14,12)
 			UserMailer.new_entry(dulles, reagan).deliver_now
+		end
 			
 	end
 end
