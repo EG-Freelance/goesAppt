@@ -1,5 +1,7 @@
 class Script < ActiveRecord::Base
 	def self.check_dates
+		dulles = ""
+		reagan = ""
 		agent = Mechanize.new
 		agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 		locations = [8120, 5142] # 8120 = Reagan, 5142 = Dulles
